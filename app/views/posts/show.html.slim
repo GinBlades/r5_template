@@ -1,0 +1,20 @@
+table.table.table-striped
+  tr
+    th User:
+    td= @post.user
+  tr
+    th Name:
+    td= @post.name
+  tr
+    th Body:
+    td= @post.body
+  tr
+    th Publish:
+    td= @post.publish
+  tr
+    th Status:
+    td= @post.status
+
+.btn-group
+  = link_to "Edit", edit_post_path(@post), class: "btn btn-default"
+  = link_to "Back", posts_path, class: "btn btn-default"
