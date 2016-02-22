@@ -36,3 +36,5 @@ gem "modernizr-rails"
 gem "mina"
 gem "quiet_assets"
 gem "slim-rails"
+
+gem "mina"
