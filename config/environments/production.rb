@@ -16,7 +16,7 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
-  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present?
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
@@ -50,7 +50,7 @@ Rails.application.configure do
   config.log_level = :debug
 
   # Prepend all log lines with the following tags.
-  config.log_tags = [ :request_id ]
+  config.log_tags = [:request_id]
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
@@ -61,11 +61,12 @@ Rails.application.configure do
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "r5template_#{Rails.env}"
+  # config.active_job.queue_name_prefix = "ginblades_#{Rails.env}"
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default_url_options = { host: "https://ginblades.com" }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).

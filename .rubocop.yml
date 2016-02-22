@@ -29,12 +29,6 @@ Rails/Output:
   Exclude:
     - "db/seeds.rb"
 
-Style/AlignHash:
-  Enabled: false
-
-Style/AlignParameters:
-  Enabled: false
-
 Style/BlockComments:
   Exclude:
     - "spec/spec_helper.rb"
