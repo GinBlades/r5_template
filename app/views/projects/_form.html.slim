@@ -3,10 +3,12 @@
 
   .form-inputs
     = f.input :name
-    = f.input :body
+    = f.input :body, as: :text, input_html: { class: "tinymce" }
     = f.input :start
     = f.input :finish
     = f.input :status
 
   .form-actions
     = f.button :submit, class: 'btn btn-success'
+
+= tinymce
