@@ -1,7 +1,8 @@
 h1 
   | Projects
-  '
-  = link_to "New Project", new_project_path, class: "btn btn-primary"
+  - if is_admin?
+    '
+    = link_to "New Project", new_project_path, class: "btn btn-primary"
 
 table.table.table-striped
   thead
@@ -24,8 +25,9 @@ table.table.table-striped
         td= project.status
         td= link_to "Show", project
         td
-          = link_to "Edit", edit_project_path(project)
-          '
-          |/
-          '
-          = link_to "Destroy", project, method: :delete, data: { confirm: "Are you sure?" }
+          - if is_admin?
+            = link_to "Edit", edit_project_path(project)
+            '
+            |/
+            '
+            = link_to "Destroy", project, method: :delete, data: { confirm: "Are you sure?" }

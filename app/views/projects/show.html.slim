@@ -16,5 +16,6 @@ table.table.table-striped
     td= @project.status
 
 .btn-group
-  = link_to "Edit", edit_project_path(@project), class: "btn btn-default"
+  - if is_admin?
+    = link_to "Edit", edit_project_path(@project), class: "btn btn-default"
   = link_to "Back", projects_path, class: "btn btn-default"

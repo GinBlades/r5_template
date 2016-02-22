@@ -16,5 +16,6 @@ table.table.table-striped
     td= @post.status
 
 .btn-group
-  = link_to "Edit", edit_post_path(@post), class: "btn btn-default"
+  - if is_admin?
+    = link_to "Edit", edit_post_path(@post), class: "btn btn-default"
   = link_to "Back", posts_path, class: "btn btn-default"
