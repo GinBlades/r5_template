@@ -233,6 +233,13 @@ GEM
     tilt (2.0.2)
     turbolinks (2.5.3)
       coffee-rails
+    typescript-node (1.6.2)
+      typescript-src (~> 1.6.2)
+    typescript-rails (0.6.2)
+      railties
+      tilt
+      typescript-node (>= 1.6.2)
+    typescript-src (1.6.2.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.7.2)
@@ -262,7 +269,6 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   capybara
-  coffee-rails
   database_cleaner
   devise (>= 4.0.0.rc1)
   factory_girl_rails
@@ -284,6 +290,7 @@ DEPENDENCIES
   spring
   spring-commands-rspec
   turbolinks
+  typescript-rails
   uglifier
   web-console (~> 3.0)
 
