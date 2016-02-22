@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", ">= 5.0.0.beta1", "< 5.1"
+gem "rails", ">= 5.0.0.beta2", "< 5.1"
 gem "pg"
 gem "uglifier"
 gem "coffee-rails"
