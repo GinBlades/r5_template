@@ -2,11 +2,10 @@
   = f.error_notification
 
   .form-inputs
-    = f.association :user
     = f.input :name
     = f.input :body, as: :text, input_html: { class: "tinymce" }
-    = f.input :publish
-    = f.input :status
+    = f.input :publish, as: :string, input_html: { class: "datetimepicker" }
+    = f.input :status, as: :select, collection: Post.statuses.keys
 
   .form-actions
     = f.button :submit, class: 'btn btn-success'

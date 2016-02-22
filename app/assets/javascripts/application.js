@@ -2,6 +2,8 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require moment
+//= require bootstrap-datetimepicker
 //= require tinymce-jquery
 //= require main
 //= require init

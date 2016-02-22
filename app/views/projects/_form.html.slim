@@ -4,9 +4,9 @@
   .form-inputs
     = f.input :name
     = f.input :body, as: :text, input_html: { class: "tinymce" }
-    = f.input :start
-    = f.input :finish
-    = f.input :status
+    = f.input :start, as: :string, input_html: { class: "datetimepicker" }
+    = f.input :finish, as: :string, input_html: { class: "datetimepicker" }
+    = f.input :status, as: :select, collection: Project.statuses.keys
 
   .form-actions
     = f.button :submit, class: 'btn btn-success'

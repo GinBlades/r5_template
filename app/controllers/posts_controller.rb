@@ -9,14 +9,15 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = current_user.posts.build
   end
 
   def edit
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
+    Rails.logger.info post_params
 
     if @post.save
       redirect_to @post, notice: "Post was successfully created."
@@ -45,6 +46,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:user_id, :name, :slug, :body, :publish, :status)
+      params.require(:post).permit(:name, :slug, :body, :publish, :status)
     end
 end
