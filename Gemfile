@@ -32,7 +32,6 @@ gem "bootstrap-sass"
 gem "autoprefixer-rails"
 gem "simple_form"
 gem "modernizr-rails"
-gem "mina"
 gem "quiet_assets"
 gem "slim-rails"
 

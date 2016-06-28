@@ -1,19 +1,13 @@
-table.table.table-striped
-  tr
-    th User:
-    td= @post.user
-  tr
-    th Name:
-    td= @post.name
-  tr
-    th Body:
-    td= @post.body
-  tr
-    th Publish:
-    td= @post.publish
-  tr
-    th Status:
-    td= @post.status
+.row
+  .col-md-9
+    hgroup
+      h1= @post.name
+      h3= @post.publish&.strftime("%Y/%m/%d")
+  .col-md-3
+    h1
+      .small by #{@post.user&.username}
+
+= raw @post.body
 
 .btn-group
   - if is_admin?

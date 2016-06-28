@@ -4,30 +4,20 @@ h1
     '
     = link_to "New Project", new_project_path, class: "btn btn-primary"
 
-table.table.table-striped
-  thead
-    tr
-      th Name
-      th Body
-      th Start
-      th Finish
-      th Status
-      th
-      th
-      
-  tbody
-    - @projects.each do |project|
-      tr
-        td= project.name
-        td= project.body
-        td= project.start
-        td= project.finish
-        td= project.status
-        td= link_to "Show", project
-        td
-          - if is_admin?
-            = link_to "Edit", edit_project_path(project)
-            '
-            |/
-            '
-            = link_to "Destroy", project, method: :delete, data: { confirm: "Are you sure?" }
+- @projects.each do |project|
+  .panel.panel-default
+    .panel-heading
+      .row
+        .col-md-9
+          h3.panel-title= link_to project.name, project
+        .col-md-3
+          span.pull-right= project.start&.strftime("%Y/%m/%d")
+    .panel-body
+      - if project.body
+        = strip_tags(project.body).truncate(50)
+      - if is_admin?
+        = link_to "Edit", edit_project_path(project)
+        '
+        |/
+        '
+        = link_to "Destroy", project, method: :delete, data: { confirm: "Are you sure?" }

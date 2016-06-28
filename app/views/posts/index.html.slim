@@ -4,30 +4,20 @@ h1
     '
     = link_to "New Post", new_post_path, class: "btn btn-primary"
 
-table.table.table-striped
-  thead
-    tr
-      th User
-      th Name
-      th Body
-      th Publish
-      th Status
-      th
-      th
-      
-  tbody
-    - @posts.each do |post|
-      tr
-        td= post.user
-        td= post.name
-        td= post.body
-        td= post.publish
-        td= post.status
-        td= link_to "Show", post
-        td
-          - if is_admin?
-            = link_to "Edit", edit_post_path(post)
-            '
-            |/
-            '
-            = link_to "Destroy", post, method: :delete, data: { confirm: "Are you sure?" }
+- @posts.each do |post|
+  .panel.panel-default
+    .panel-heading
+      .row
+        .col-md-9
+          h3.panel-title= link_to post.name, post
+        .col-md-3
+          span.pull-right= post.publish&.strftime("%Y/%m/%d")
+    .panel-body
+      - if post.body
+        = strip_tags(post.body).truncate(50)
+      - if is_admin?
+        = link_to "Edit", edit_post_path(post)
+        '
+        |/
+        '
+        = link_to "Destroy", post, method: :delete, data: { confirm: "Are you sure?" }

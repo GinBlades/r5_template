@@ -1,19 +1,15 @@
-table.table.table-striped
-  tr
-    th Name:
-    td= @project.name
-  tr
-    th Body:
-    td= @project.body
-  tr
-    th Start:
-    td= @project.start
-  tr
-    th Finish:
-    td= @project.finish
-  tr
-    th Status:
-    td= @project.status
+.row
+  .col-md-9
+    hgroup
+      h1= @project.name
+      h3
+        = @project.start&.strftime("%Y/%m/%d")
+        - if @project.finish
+          ' to
+          '
+          = @project.finish.strftime("%Y/%m/%d")
+
+= raw @project.body
 
 .btn-group
   - if is_admin?
