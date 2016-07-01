@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", ">= 5.0.0.beta2", "< 5.1"
+gem "rails", "~> 5.0.0"
 gem "pg"
 gem "uglifier"
 gem "jquery-rails"
@@ -8,7 +8,7 @@ gem "turbolinks"
 gem "puma"
 
 group :development, :test do
-  gem "rspec-rails"
+  gem "rspec-rails", "~> 3.5.0.beta4"
   gem "capybara"
   gem "selenium-webdriver"
   gem "database_cleaner"
@@ -20,7 +20,9 @@ end
 
 group :development do
   gem "web-console", "~> 3.0"
+  gem "listen"
   gem "spring"
+  gem "spring-watcher-listen"
   gem "pry-rails"
   gem "rubocop"
   gem "simplecov", require: false
@@ -32,7 +34,6 @@ gem "bootstrap-sass"
 gem "autoprefixer-rails"
 gem "simple_form"
 gem "modernizr-rails"
-gem "quiet_assets"
 gem "slim-rails"
 
 gem "devise", ">= 4.0.0.rc1"

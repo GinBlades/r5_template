@@ -36,6 +36,8 @@ Rails.application.configure do
     password: Rails.application.secrets.mandrill_apikey
   }
 
+  config.action_mailer.perform_caching = false
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
@@ -49,7 +51,7 @@ Rails.application.configure do
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
-  config.assets.digest = true
+  config.assets.quiet = true
 
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
@@ -61,7 +63,7 @@ Rails.application.configure do
 
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
-  # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.generators do |g|
     g.stylesheets false
