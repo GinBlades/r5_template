@@ -5,11 +5,12 @@ gem "pg"
 gem "uglifier"
 gem "coffee-rails"
 gem "jquery-rails"
+gem "sass-rails"
 gem "turbolinks"
 gem "puma"
 
 group :development, :test do
-  gem "rspec-rails", "~> 3.5.0.beta4"
+  gem "rspec-rails"
   gem "capybara"
   gem "selenium-webdriver"
   gem "database_cleaner"
@@ -27,8 +28,6 @@ group :development do
   gem "pry-rails"
   gem "rubocop"
   gem "simplecov", require: false
-  gem "better_errors"
-  gem "binding_of_caller"
 end
 
 gem "bootstrap-sass"
