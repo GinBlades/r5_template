@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "~> 5.0.0"
+gem "rails", "~> 5.0.0.1"
 gem "pg"
 gem "uglifier"
 gem "jquery-rails"
@@ -8,7 +8,7 @@ gem "turbolinks"
 gem "puma"
 
 group :development, :test do
-  gem "rspec-rails", "~> 3.5.0.beta4"
+  gem "rspec-rails"
   gem "capybara"
   gem "selenium-webdriver"
   gem "database_cleaner"
@@ -19,7 +19,7 @@ group :development, :test do
 end
 
 group :development do
-  gem "web-console", "~> 3.0"
+  gem "web-console"
   gem "listen"
   gem "spring"
   gem "spring-watcher-listen"
@@ -36,7 +36,7 @@ gem "simple_form"
 gem "modernizr-rails"
 gem "slim-rails"
 
-gem "devise", ">= 4.0.0.rc1"
+gem "devise"
 gem "typescript-rails"
 gem "tinymce-rails"
 gem "momentjs-rails"
