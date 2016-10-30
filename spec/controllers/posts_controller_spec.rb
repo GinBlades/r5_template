@@ -18,7 +18,7 @@ RSpec.describe PostsController, type: :controller do
 
     describe "GET show" do
       it "assigns the requested post as @post" do
-        get :show, id: base_post
+        get :show, params: { id: base_post }
         expect(instance_post).to eq(base_post)
       end
     end
@@ -32,7 +32,7 @@ RSpec.describe PostsController, type: :controller do
 
     describe "GET edit" do
       it "assigns the requested post as @post" do
-        get :edit, id: base_post
+        get :edit, params: { id: base_post }
         expect(instance_post).to eq(base_post)
       end
     end
@@ -41,30 +41,30 @@ RSpec.describe PostsController, type: :controller do
       describe "with valid params" do
         it "creates a new Post" do
           expect do
-            post :create, post: valid_attributes
+            post :create, params: { post: valid_attributes }
           end.to change(Post, :count).by(1)
         end
 
         it "assigns a newly created post as @post" do
-          post :create, post: valid_attributes
+          post :create, params: { post: valid_attributes }
           expect(instance_post).to be_a(Post)
           expect(instance_post).to be_persisted
         end
 
         it "redirects to the created post" do
-          post :create, post: valid_attributes
+          post :create, params: { post: valid_attributes }
           expect(response).to redirect_to(Post.last)
         end
       end
 
       describe "with invalid params" do
         it "assigns a newly created but unsaved post as @post" do
-          post :create, post: invalid_attributes
+          post :create, params: { post: invalid_attributes }
           expect(instance_post).to be_a_new(Post)
         end
 
         it "re-renders the 'new' template" do
-          post :create, post: invalid_attributes
+          post :create, params: { post: invalid_attributes }
           expect(response).to render_template("new")
         end
       end
@@ -73,25 +73,25 @@ RSpec.describe PostsController, type: :controller do
     describe "PUT update" do
       describe "with valid params" do
         it "assigns the requested post as @post" do
-          put :update, id: static_post, post: valid_attributes
+          put :update, params: { id: static_post, post: valid_attributes }
           static_post.reload
           expect(instance_post).to eq(static_post)
         end
 
         it "redirects to the post" do
-          put :update, id: static_post, post: valid_attributes
+          put :update, params: { id: static_post, post: valid_attributes }
           expect(response).to redirect_to(static_post)
         end
       end
 
       describe "with invalid params" do
         it "assigns the post as @post" do
-          put :update, id: static_post, post: invalid_attributes
+          put :update, params: { id: static_post, post: invalid_attributes }
           expect(assigns(:post)).to eq(static_post)
         end
 
         it "re-renders the 'edit' template" do
-          put :update, id: static_post, post: invalid_attributes
+          put :update, params: { id: static_post, post: invalid_attributes }
           expect(response).to render_template("edit")
         end
       end
@@ -101,12 +101,12 @@ RSpec.describe PostsController, type: :controller do
       it "destroys the requested post" do
         new_post = create :post
         expect do
-          delete :destroy, id: new_post
+          delete :destroy, params: { id: new_post }
         end.to change(Post, :count).by(-1)
       end
 
       it "redirects to the post list" do
-        delete :destroy, id: base_post
+        delete :destroy, params: { id: base_post }
         expect(response).to redirect_to(posts_url)
       end
     end
