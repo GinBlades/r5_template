@@ -4,6 +4,7 @@ gem "rails", "~> 5.0.0.1"
 gem "pg"
 gem "uglifier"
 gem "jquery-rails"
+gem "sass-rails"
 gem "turbolinks"
 gem "puma"
 
@@ -26,8 +27,6 @@ group :development do
   gem "pry-rails"
   gem "rubocop"
   gem "simplecov", require: false
-  gem "better_errors"
-  gem "binding_of_caller"
 end
 
 gem "bootstrap-sass"
